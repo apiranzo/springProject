@@ -59,10 +59,8 @@ public class Libro {
 	private LocalDate fechaPublicacion;
 	
 	//VAlor por defecto para Builder
-//	@Builder.Default
-	@ManyToOne(fetch = FetchType.LAZY, optional = true)
-	@JoinColumn(name = "autor_id")
-	private Autor autor;
+	@Builder.Default
+	private String autor = "anónimo";
 	
 	@Min(0)
 	@Positive

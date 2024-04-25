@@ -6,6 +6,9 @@ import org.springframework.stereotype.Service;
 import com.pejo.anna.libreriaconspring.entidades.Libro;
 import com.pejo.anna.libreriaconspring.repositorios.LibroRepositorio;
 
+import lombok.extern.java.Log;
+
+@Log
 @Service
 public class UsuarioNegocioImpl implements UsuarioNegocio{
 
@@ -15,7 +18,7 @@ public class UsuarioNegocioImpl implements UsuarioNegocio{
 	
 	@Override
 	public Iterable<Libro> obtenerLibros() {
-		// TODO Auto-generated method stub
+		log.info("Libros encontrados");
 		return libroRepo.findAll();
 	}
 
