@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.pejo.anna.libreriaconspring.entidades.Libro;
 import com.pejo.anna.libreriaconspring.repositorios.LibroRepositorio;
+import com.pejo.anna.libreriaconspring.servicios.UsuarioNegocio;
 
 @SpringBootApplication
 public class LibreriaconspringApplication implements CommandLineRunner {
@@ -23,18 +24,19 @@ public class LibreriaconspringApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+		
 
-		repo.save(Libro.builder().titulo("Libro ").precio(new BigDecimal(4)).stock(5).build());
-
-		for (var l : repo.findAll()) {
-			System.out.println(l);
-		}
-		
-		repo.findByTituloContains("L");
-		
-		repo.findById(1L);
-		
-		repo.findByPrecioBetween(new BigDecimal(2), new BigDecimal(5));
 	}
 
+//	repo.save(Libro.builder().titulo("Libro ").precio(new BigDecimal(4)).stock(5).build());
+//	
+//	for (var l : repo.findAll()) {
+//		System.out.println(l);
+//	}
+//	
+//	repo.findByTituloContains("L");
+//	
+//	repo.findById(1L);
+//	
+//	repo.findByPrecioBetween(new BigDecimal(2), new BigDecimal(5));
 }
