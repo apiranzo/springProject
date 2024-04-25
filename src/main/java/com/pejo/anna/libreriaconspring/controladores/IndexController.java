@@ -34,7 +34,7 @@ public class IndexController {
 	}
 	
 	@GetMapping("/admin") //llamada a la url admin
-	public String admin() {
+	public String admin(Libro libro) {
 		return "admin";
 	}
 	

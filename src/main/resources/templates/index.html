@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html th:replace="~{_global :: plantilla(~{::title}, ~{::main})}"
+	xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<title>Libreria</title>
+<title>Home</title>
 </head>
 <body>
-	<h1>Hola</h1>
-	
-	<p th:text="${libros}">Datos Libro</p>
-	
-	<ul>
-		<li th:each="l : ${libros}"></li>
-	</ul>
+	<main>
+		<p th:text="${libros}">Datos Libro</p>
+
+		<ul>
+			<li th:each="l : ${libros}"></li>
+		</ul>
+		<!-- /* Esto es un comentario de thymeleaf */ -->
+	</main>
 </body>
 </html>

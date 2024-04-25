@@ -1,21 +1,20 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html th:replace="~{_global :: plantilla(~{::title}, ~{::main})}"
+	xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Administración</title>
 </head>
 <body>
-	<h1>Administración</h1>
-	<form method="post" th:object="${libro}">
+	<main>
+		<form method="post" th:object="${libro}">
 
-		<input placeholder="titulo" th:field="*{titulo}"> 
-		<span th:errors="*{titulo}"></span>
-		<input
-			placeholder="precio" th:value="*{precio}">
-			<span th:errors="*{precio}"></span>
-		<button type="submit">Guardar</button>
+			<input placeholder="titulo" th:field="*{titulo}"> <span
+				th:errors="*{titulo}"></span> <input placeholder="precio"
+				th:value="*{precio}"> <span th:errors="*{precio}"></span>
+			<button type="submit">Guardar</button>
 
-	</form>
+		</form>
+	</main>
 
 </body>
 </html>
