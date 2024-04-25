@@ -2,6 +2,7 @@
 <html th:fragment="plantilla (titulo, contenido)"
 	xmlns:th="http://www.thymeleaf.org">
 <head>
+<base th:href="@{/}"> <!-- Direcciones relativas al servidor de la aplicación -->
 <title th:replace="${titulo}">Layout Title</title>
 </head>
 <body>
@@ -22,8 +23,8 @@
 		Layout footer
 		<nav>
 			<ul>
-				<li>Index</li>
-				<li>Admin</li>
+				<li><a th:href="@{/}" href="index.html">Index</a></li>
+				<li><a th:href="@{/admin}" href="admin.html">Admin</a></li>
 			</ul>
 		</nav>
 	</footer>
