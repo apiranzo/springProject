@@ -4,11 +4,9 @@ import java.time.LocalDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Digits;
@@ -58,7 +56,7 @@ public class Libro {
 	@Column(name = "fecha_publicacion")
 	private LocalDate fechaPublicacion;
 	
-	//VAlor por defecto para Builder
+	//Valor por defecto para Builder
 	@Builder.Default
 	private String autor = "anónimo";
 	
@@ -70,6 +68,9 @@ public class Libro {
 	@Size(min = 11, max = 11)
 	@Column(name = "isbn")
 	private String isbn;
+	
+	@ManyToOne
+	private Categoria categoria;
 	
 	
 	
