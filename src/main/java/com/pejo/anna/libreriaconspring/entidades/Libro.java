@@ -14,6 +14,7 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -65,10 +66,11 @@ public class Libro {
 	@Column(name = "stock")
 	private Integer stock;
 	
-	@Size(min = 11, max = 11)
-	@Column(name = "isbn")
+	@Pattern(regexp = "^\\d{11}$", message = "Debe ser un código de 11 dígitos")
+	@Column(name = "isbn", columnDefinition = "CHAR(11)")
 	private String isbn;
 	
+	@NotNull
 	@ManyToOne
 	private Categoria categoria;
 	

@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import com.pejo.anna.libreriaconspring.entidades.Libro;
-import com.pejo.anna.libreriaconspring.repositorios.LibroRepositorio;
+import com.pejo.anna.libreriaconspring.repositorios.LibroRepository;
 
 import lombok.extern.java.Log;
 
@@ -17,7 +17,7 @@ public class AdminNegocioImpl extends UsuarioNegocioImpl implements AdminNegocio
 
 	// Llamada al repositorio que se crea automaticamente con la fabrica
 	@Autowired
-	private LibroRepositorio libroRepo;
+	private LibroRepository libroRepo;
 
 	@Override
 	public Libro insertarLibro(Libro libro) {

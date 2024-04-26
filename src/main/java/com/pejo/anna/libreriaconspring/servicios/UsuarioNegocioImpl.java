@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pejo.anna.libreriaconspring.entidades.Libro;
-import com.pejo.anna.libreriaconspring.repositorios.LibroRepositorio;
+import com.pejo.anna.libreriaconspring.repositorios.LibroRepository;
 
 import lombok.extern.java.Log;
 
@@ -14,7 +14,7 @@ public class UsuarioNegocioImpl implements UsuarioNegocio{
 
 	//Llamada al repositorio que se crea automaticamente con la fabrica
 	@Autowired
-	private LibroRepositorio libroRepo;
+	private LibroRepository libroRepo;
 	
 	@Override
 	public Iterable<Libro> obtenerLibros() {

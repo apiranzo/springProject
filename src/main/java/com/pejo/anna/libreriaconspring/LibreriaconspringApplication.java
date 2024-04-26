@@ -5,7 +5,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.pejo.anna.libreriaconspring.repositorios.LibroRepositorio;
+import com.pejo.anna.libreriaconspring.repositorios.LibroRepository;
 import com.pejo.anna.libreriaconspring.servicios.AdminNegocio;
 import com.pejo.anna.libreriaconspring.servicios.UsuarioNegocio;
 
@@ -18,7 +18,7 @@ public class LibreriaconspringApplication implements CommandLineRunner {
 
 	// Dependencias de Clase - pedida por la fabrica
 	@Autowired
-	private LibroRepositorio repo;
+	private LibroRepository repo;
 	
 	@Autowired
 	private UsuarioNegocio usuarioNegocio;

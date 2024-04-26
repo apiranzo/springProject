@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.pejo.anna.libreriaconspring.entidades.Libro;
 
 
-public interface LibroRepositorio extends CrudRepository<Libro, Long>{
+public interface LibroRepository extends CrudRepository<Libro, Long>{
 	//La crea Spring de forma embevida 
 	//De forma automática CrudRepository es el DAO<T> que hacíamos con operaciones básicas
 	//Cuando arranca spring se crea el codigo en tiempo real. 

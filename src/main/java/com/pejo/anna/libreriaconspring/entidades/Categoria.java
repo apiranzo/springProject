@@ -12,6 +12,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -31,9 +32,13 @@ public class Categoria {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@Pattern(regexp = "^\\d{8}$", message = "Debe ser un código de 8 dígitos")
+	@Column(name = "codigo", columnDefinition = "CHAR(8)")
+	private String codigo;
+	
 	@NotBlank(message = "El nombre es obligatorio")
 	@NotNull
-	@Size(min = 1, max = 100)
+	@Size(min = 3, max = 100)
 	@Column(name = "nombre")
 	private String nombre;
 	
