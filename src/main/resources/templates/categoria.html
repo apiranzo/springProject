@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html th:replace="~{_global :: plantilla(~{::title}, ~{::main})}"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Home</title>
+</head>
+<body>
+	<main>
+		<h1>
+			Categoria <span th-text="${categoria.nombre}"></span>
+		</h1>
+
+		<ul>
+			<li th:text="${'Codigo: ' + categoria.codigo}"></li>
+			<li th:text="${'Descripcion: ' + categoria.descripcion}"></li>
+				<ul>
+					<li th:each="l : ${categoria.libros}"
+						th:text="${l.titulo + ': ' + l.precio + '&euro; Autor: ' + l.autor}"></li>
+				</ul>
+
+			</li>
+
+
+		</ul>
+
+
+	</main>
+</body>
+</html>

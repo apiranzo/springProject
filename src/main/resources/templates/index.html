@@ -6,12 +6,47 @@
 </head>
 <body>
 	<main>
-		<p th:text="${libros}">Datos Libro</p>
+		<p>Datos Libro</p>
 
 		<ul>
-			<li th:each="l : ${libros}" th:text="${l.nombre + ': ' + l.precio}"></li>
+			<li th:each="l : ${libros}" th:text="${l.titulo + ': ' + l.precio + '&euro; Categoria: ' + l.categoria}"></li>
 		</ul>
 		<!-- /* Esto es un comentario de thymeleaf */ -->
+		
+		<p>Datos Categorias</p>
+		
+		<table>
+			<caption>Tabla Categorias</caption>
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Nombre</th>
+					<th>Codigo</th>
+					<th>Descripcion</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr data-th-each="c : ${categorias}">
+					<td data-th-text="${c.id}">Dato 1</td>
+					<td data-th-text="${c.nombre}">Dato 2</td>
+					<td data-th-text="${c.codigo}">Dato 2</td>
+					<td data-th-text="${c.descripcion}">Dato 3</td>
+
+				</tr>
+
+			</tbody>
+		</table>
+		
+		<br>
+		<p>Libros por categoria</p>
+		<ul>
+			<li th:each="l : ${cantidadesLibroCategoria}" th:text="${l}"></li>
+		</ul>
+<!-- /*
+		<ul>
+			<li th:each="cl : ${cantidesLibroCategoria}" th:text="${cl.libros + ': ' + cl.categoria_id + ' Categoria: ' + cl.nombre}"></li>
+		</ul> 
+*/ -->
 	</main>
 </body>
 </html>

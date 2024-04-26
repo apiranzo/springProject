@@ -20,5 +20,6 @@ public interface LibroRepository extends CrudRepository<Libro, Long>{
 	
 	//Between busca los resultados que se encuentren entre los parametros
 	Iterable<Libro> findByPrecioBetween(BigDecimal minimo, BigDecimal maximo);
+	
 
 }
